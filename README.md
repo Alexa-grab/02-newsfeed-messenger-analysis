@@ -211,20 +211,21 @@ limit 100
 
 **4. Анализ аудитории** 
 
--График распределения аудитории по полу и возрасту.
--Столбчатая диаграмма 10 самых активных городов.
--График распределения аудитории по источнику входа (рекламный или органический).
+ - График распределения аудитории по полу и возрасту.
+ - Столбчатая диаграмма 10 самых активных городов.
+ - График распределения аудитории по источнику входа (рекламный или органический). 
+ 
  ```
---Выборка пользователей использующих оба сервиса 
-WITH common_users AS (
+ --Выборка пользователей использующих оба сервиса 
+ WITH common_users AS (
     SELECT DISTINCT user_id
     FROM simulator_20250820.feed_actions
     INTERSECT
     SELECT DISTINCT user_id
     FROM simulator_20250820.message_actions
-)
---Возраст,пол,город,os,источник входа по каждому пользователю
-SELECT DISTINCT
+ )
+ --Возраст,пол,город,os,источник входа по каждому пользователю
+ SELECT DISTINCT
     fa.user_id,
     CASE
         WHEN fa.gender = 1 THEN 'Woman'
@@ -243,10 +244,10 @@ SELECT DISTINCT
     fa.source,
     fa.city,
     fa.os
-FROM simulator_20250820.feed_actions fa
-WHERE fa.user_id IN (SELECT user_id FROM common_users)
-ORDER BY fa.user_id
- ```
+ FROM simulator_20250820.feed_actions fa
+ WHERE fa.user_id IN (SELECT user_id FROM common_users)
+ ORDER BY fa.user_id
+  ```
 ![Анализ аудитории](https://github.com/Alexa-grab/desktop-tutorial/blob/main/dashboard%20feed%20and%20message%205.png)
 
 # **Результаты анализа**
