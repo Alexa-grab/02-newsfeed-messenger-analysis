@@ -7,7 +7,6 @@ https://karpov.courses/simulator
 
 Проект анализа данных о взаимодействии 2х  продуктов приложения с визуализацией в Apache Superset.
 
-
 ## Вводные данные
 Социальная сеть с двумя сервисами:
 - **Лента новостей** — просмотр и лайки постов
@@ -32,19 +31,19 @@ https://karpov.courses/simulator
 **BI-инструменты**: Superset, Redash  
 
 #### Структура таблиц БД
+
 **1. Feed_actions**
- - post_id  id поста;
- - user_id  id пользователя;
- - action   совершенное действие view/like;
- - time  время совершенного действия;
- - gender/city/country/os/source информация о пользователе.
+ - post_id: id поста;
+ - user_id: id пользователя;
+ - action: Совершенное действие view/like;
+ - time:  Время совершенного действия;
+ - gender/city/country/os/source: Информация о пользователе.
 
 **2. Message_actions**
-- user_id  id отправителя сообщения;
-- receiver_id id получателя сообщения;
-- time-время совершенного действия;
-- gender/city/country/os/source информация о пользователе.
-
+- user_id: id отправителя сообщения;
+- receiver_id: id получателя сообщения;
+- time: Время совершенного действия;
+- gender/city/country/os/source: Информация о пользователе.
 
 
 ## **Дашборд**
